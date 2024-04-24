@@ -1,0 +1,15 @@
+.chart-card {
+    width: 100%; /* Take up full width of parent container */
+    max-width: calc(80% - 20px); /* Limit width to half of the container with some gap */
+    margin-bottom: 20px; /* Add some bottom margin for spacing */
+    box-sizing: border-box; /* Include border in width calculation */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
