@@ -63,19 +63,24 @@ export class SensorComponent implements OnInit {
           this.dataTemperature.push(item.Value);
           this.timeLabelsTemperature.push(new Date(item.Date_n_Time).toLocaleTimeString());
           this.TodayDate = new Date(item.Date_n_Time).toLocaleDateString();
-        }else if(item.SensorID == 'Type-1'){
+        }
+        if(item.SensorID == 'Type-1'){
           this.dataHumidity.push(item.Value);
           this.timeLabelsHumidity.push(new Date(item.Date_n_Time).toLocaleTimeString());
-        }else if(item.SensorID == 'Type-3'){
+        }
+        if(item.SensorID == 'Type-3'){
           this.dataFlow.push(item.Value);
           this.timeLabelsFlow.push(new Date(item.Date_n_Time).toLocaleTimeString());
-        }else if(item.SensorID == 'Type-4'){
+        }
+        if(item.SensorID == 'Type-4'){
           this.dataPosition.push(item.Value);
           this.timeLabelsPosition.push(new Date(item.Date_n_Time).toLocaleTimeString());
-        }else if(item.SensorID == 'Type-5'){
+        }
+        if(item.SensorID == 'Type-5'){
           this.dataPaintLevel.push(item.Value);
           this.timeLabelsPaintLevel.push(new Date(item.Date_n_Time).toLocaleTimeString());
-        }else if(item.SensorID == 'Type-6'){
+        }
+        if(item.SensorID == 'Type-6'){
           this.dataSurfaceQuality.push(item.Value);
           this.timeLabelsSurfaceQuality.push(new Date(item.Date_n_Time).toLocaleTimeString());
         }
@@ -117,18 +122,18 @@ export class SensorComponent implements OnInit {
     let chart = Chart.getChart(ctx);
     if (chart) {
       // If chart exists, update its data
-      chart.data.labels = labels.slice(-5).reverse(); // Get the labels corresponding to the latest five data points
-      chart.data.datasets[0].data = dataPosition.slice(-5).reverse();
+      chart.data.labels = labels.slice(-5); // Get the labels corresponding to the latest five data points
+      chart.data.datasets[0].data = dataPosition.slice(-5);
       chart.update();
     } else {
       // If chart doesn't exist, create a new chart
       new Chart(ctx, {
         type: type,
         data: {
-          labels: labels.slice(-5).reverse(), // Get the labels corresponding to the latest five data points,
+          labels: labels.slice(-5), // Get the labels corresponding to the latest five data points,
           datasets: [{
             label: 'Position',
-            data: dataPosition.slice(-5).reverse(),
+            data: dataPosition.slice(-5),
             borderColor: 'rgb(100, 50, 100)',
             backgroundColor: 'rgb(100, 50, 100)',
             borderWidth: 1
@@ -174,18 +179,18 @@ export class SensorComponent implements OnInit {
     let chart = Chart.getChart(ctx);
     if (chart) {
       // If chart exists, update its data
-      chart.data.labels = labels.slice(-5).reverse(); // Get the labels corresponding to the latest five data points
-      chart.data.datasets[0].data = dataQuality.slice(-5).reverse();
+      chart.data.labels = labels.slice(-5); // Get the labels corresponding to the latest five data points
+      chart.data.datasets[0].data = dataQuality.slice(-5);
       chart.update();
     } else {
       // If chart doesn't exist, create a new chart
       new Chart(ctx, {
         type: type,
         data: {
-          labels: labels.slice(-5).reverse(), // Get the labels corresponding to the latest five data points,
+          labels: labels.slice(-5), // Get the labels corresponding to the latest five data points,
           datasets: [{
             label: 'Surface Quality',
-            data: dataQuality.slice(-5).reverse()
+            data: dataQuality.slice(-5)
           }]
         },
         options: {
@@ -228,18 +233,18 @@ export class SensorComponent implements OnInit {
     let chart = Chart.getChart(ctx);
     if (chart) {
       // If chart exists, update its data
-      chart.data.labels = labels.slice(-5).reverse(); // Get the labels corresponding to the latest five data points
-      chart.data.datasets[0].data = dataHumidity.slice(-5).reverse();
+      chart.data.labels = labels.slice(-5); // Get the labels corresponding to the latest five data points
+      chart.data.datasets[0].data = dataHumidity.slice(-5);
       chart.update();
     } else {
       // If chart doesn't exist, create a new chart
       new Chart(ctx, {
         type: type,
         data: {
-          labels: labels.slice(-5).reverse(), // Get the labels corresponding to the latest five data points,
+          labels: labels.slice(-5), // Get the labels corresponding to the latest five data points,
           datasets: [{
             label: 'Humidity',
-            data: dataHumidity.slice(-5).reverse(),
+            data: dataHumidity.slice(-5),
             borderColor: 'rgb(0, 0, 255)',
             backgroundColor: 'rgb(0, 0, 255)',
             borderWidth: 1
@@ -285,18 +290,18 @@ export class SensorComponent implements OnInit {
     let chart = Chart.getChart(ctx);
     if (chart) {
       // If chart exists, update its data
-      chart.data.labels = labels.slice(-5).reverse(); // Get the labels corresponding to the latest five data points
-      chart.data.datasets[0].data = dataPaintLevel.slice(-5).reverse();
+      chart.data.labels = labels.slice(-5); // Get the labels corresponding to the latest five data points
+      chart.data.datasets[0].data = dataPaintLevel.slice(-5);
       chart.update();
     } else {
       // If chart doesn't exist, create a new chart
       new Chart(ctx, {
         type: type,
         data: {
-          labels: labels.slice(-5).reverse(), // Get the labels corresponding to the latest five data points,
+          labels: labels.slice(-5), // Get the labels corresponding to the latest five data points,
           datasets: [{
             label: 'Paint Level',
-            data: dataPaintLevel.slice(-5).reverse(),
+            data: dataPaintLevel.slice(-5),
             borderColor: 'rgb(0, 255, 243)',
             backgroundColor: 'rgb(0, 255, 243)',
             borderWidth: 1
@@ -342,18 +347,18 @@ export class SensorComponent implements OnInit {
     let chart = Chart.getChart(ctx);
     if (chart) {
       // If chart exists, update its data
-      chart.data.labels = labels.slice(-5).reverse(); // Get the labels corresponding to the latest five data points
-      chart.data.datasets[0].data = dataFlow.slice(-5).reverse();
+      chart.data.labels = labels.slice(-5); // Get the labels corresponding to the latest five data points
+      chart.data.datasets[0].data = dataFlow.slice(-5);
       chart.update();
     } else {
       // If chart doesn't exist, create a new chart
       new Chart(ctx, {
         type: type,
         data: {
-          labels: labels.slice(-5).reverse(), // Get the labels corresponding to the latest five data points,
+          labels: labels.slice(-5), // Get the labels corresponding to the latest five data points,
           datasets: [{
             label: 'Flow',
-            data: dataFlow.slice(-5).reverse(),
+            data: dataFlow.slice(-5),
             borderColor: 'rgb(0, 255, 0)',
             backgroundColor: 'rgb(0, 255, 0)',
             borderWidth: 1
@@ -399,18 +404,18 @@ export class SensorComponent implements OnInit {
     let chart = Chart.getChart(ctx);
     if (chart) {
       // If chart exists, update its data
-      chart.data.labels = labels.slice(-5).reverse(); // Get the labels corresponding to the latest five data points
-      chart.data.datasets[0].data = dataTemperature.slice(-5).reverse();
+      chart.data.labels = labels.slice(-5); // Get the labels corresponding to the latest five data points
+      chart.data.datasets[0].data = dataTemperature.slice(-5);
       chart.update();
     } else {
       // If chart doesn't exist, create a new chart
       new Chart(ctx, {
         type: type,
         data: {
-          labels: labels.slice(-5).reverse(), // Get the labels corresponding to the latest five data points,
+          labels: labels.slice(-5), // Get the labels corresponding to the latest five data points,
           datasets: [{
             label: 'Temperature',
-            data: dataTemperature.slice(-5).reverse(),
+            data: dataTemperature.slice(-5),
             borderColor: 'rgb(255, 0, 0)',
             backgroundColor: 'rgb(255, 0, 0)',
             borderWidth: 1
@@ -477,7 +482,7 @@ export class SensorComponent implements OnInit {
           name: 'Temperature',
           type: 'line',
           yAxisIndex: 0,
-          data: dataTemperature.slice(-5).reverse(), // Sample humidity data
+          data: dataTemperature.slice(-5), // Sample humidity data
           lineStyle: {
             color: 'rgb(255, 0, 0)' // Change line color for Flow
           }
@@ -486,7 +491,7 @@ export class SensorComponent implements OnInit {
           name: 'Humidity',
           type: 'bar',
           yAxisIndex: 1,
-          data: dataHumidity.slice(-5).reverse(), // Sample flow rate data
+          data: dataHumidity.slice(-5), // Sample flow rate data
           itemStyle: {
             color: 'rgb(0, 0, 255)' // Change line color for Flow
           }
@@ -509,7 +514,7 @@ export class SensorComponent implements OnInit {
       },
       xAxis: {
         type: 'category',
-        data: labels.slice(-5).reverse(),
+        data: labels.slice(-5),
         axisLabel: {
           interval: 0, // Display all labels
           rotate: 45, // Rotate labels if needed for better readability
@@ -539,7 +544,7 @@ export class SensorComponent implements OnInit {
           name: 'Flow',
           type: 'line',
           yAxisIndex: 0,
-          data: dataFlow.slice(-5).reverse(), // Sample Flow data
+          data: dataFlow.slice(-5), // Sample Flow data
           lineStyle: {
             color: 'rgb(255, 0, 255)' // Change line color for Flow
           }
@@ -548,7 +553,7 @@ export class SensorComponent implements OnInit {
           name: 'Paint Level',
           type: 'bar',
           yAxisIndex: 1,
-          data: dataPaintLevel.slice(-5).reverse(), // Sample Paint level rate data
+          data: dataPaintLevel.slice(-5), // Sample Paint level rate data
           itemStyle: {
             color: 'rgb(255, 0, 0)' // Change bar color for Paint Level
           }
